@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service'
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  nomeLogin: string = "Login"
+  constructor(
+    private router: Router,
+    public auth: AuthService
+    ) { }
 
-  constructor() { }
+  ngOnInit(){
+  }
+  
 
-  ngOnInit(): void {
+  nome(){
+
+    let token = localStorage.getItem('token')
+    let Login 
+
+    if(token != null){
+      
+      Login = localStorage.getItem('nome')
+    }else{
+      Login = "Logar"
+    }
+    return new String (Login)
   }
 
   

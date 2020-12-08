@@ -34,9 +34,10 @@ export class AuthService {
     
     if (token == null){
       let token = localStorage.getItem('token')
+      
       ok = true
     }
-    return ok 
+    return ok
 
   }
 }
