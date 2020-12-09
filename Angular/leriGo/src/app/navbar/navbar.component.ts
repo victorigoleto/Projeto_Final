@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
     ) { }
 
   ngOnInit(){
+    
   }
   
 
@@ -26,11 +27,27 @@ export class NavbarComponent implements OnInit {
     if(token != null){
       
       Login = localStorage.getItem('nome')
-    }else{
+    }else if(token == null){
       Login = "Logar"
     }
     return new String (Login)
   }
 
+  verificarLogin(){
+
+    let Login = localStorage.getItem('nome')
+
+    if(Login == null || Login == "Logar"){
+      this.router.navigate(['/login'])
+    }else{
+      this.router.navigate(['/minhaConta'])
+    }
+
+  }
   
+
+
+
+
+
 }
