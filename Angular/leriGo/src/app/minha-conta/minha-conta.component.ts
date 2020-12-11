@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
 import { CategoriaService } from '../service/categoria.service';
@@ -11,21 +12,29 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class MinhaContaComponent implements OnInit {
 
+  idProd!: number
   idCate!: number
   produto: Produto = new Produto()
   listaProduto!: Produto[]
-  categoria: Categoria = new Categoria
+  categoria: Categoria = new Categoria()
   listaCategoria!: Categoria[]
   
   constructor(
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private router: Router
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
 
     this.findAllCategorias()
     this.findAllProdutos()
+  }
+
+  identificadorProduto(id: number){
+    
+
   }
 
   findAllProdutos(){
@@ -61,4 +70,12 @@ export class MinhaContaComponent implements OnInit {
       })
     }
   }
+
+  btnDeletarSim(){
+    this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
+      this.router.navigate(['/minhaConta'])
+      alert('Produto excluido com sucesso!')
+    })
+  }
+
 }
