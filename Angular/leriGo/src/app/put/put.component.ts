@@ -40,25 +40,7 @@ export class PutComponent implements OnInit {
     })
   }
 
-  findAllProdutos(){
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
-      this.listaProduto = resp
-    })
-  }
-
-  findAllCategorias(){
-    this.categoriaService.getAllCategorias().subscribe((resp: Categoria[])=> {
-      this.listaCategoria = resp
-    })
-  }
-
-  findByIdCategoria(id: number){
-    this.categoriaService.getByIdCategoria(id).subscribe((resp : Categoria)=> {
-      this.categoria = resp
-    })
-  }
-  salvar(){
-    
+  salvar(){  
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto = resp

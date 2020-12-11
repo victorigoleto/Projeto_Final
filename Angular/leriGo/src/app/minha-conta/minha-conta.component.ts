@@ -78,5 +78,22 @@ export class MinhaContaComponent implements OnInit {
 
   identificarId(id: number){
     this.idProd = id
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
+      this.produto = resp
+      })
   }
+
+  salvar(){  
+
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
+    this.produto = resp
+    this.router.navigate(['/minhaConta'])
+    alert('Postagem alterada com sucesso')
+    }, err =>{
+      if(err.status == '500'){
+        alert('Preencha todos os campos corretamente antes de enviar')
+      }
+    })
+  }
+  
 }
