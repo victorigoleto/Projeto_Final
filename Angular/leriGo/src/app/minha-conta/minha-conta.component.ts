@@ -1,5 +1,6 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
 import { CategoriaService } from '../service/categoria.service';
@@ -22,19 +23,16 @@ export class MinhaContaComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
 
+
     this.findAllCategorias()
     this.findAllProdutos()
-  }
-
-  identificadorProduto(id: number){
-    
-
   }
 
   findAllProdutos(){
@@ -71,11 +69,14 @@ export class MinhaContaComponent implements OnInit {
     }
   }
 
-  btnDeletarSim(){
+  btnDelete(){
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       this.router.navigate(['/minhaConta'])
       alert('Produto excluido com sucesso!')
     })
   }
 
+  identificarId(id: number){
+    this.idProd = id
+  }
 }
