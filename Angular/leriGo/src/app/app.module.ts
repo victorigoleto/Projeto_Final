@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PerfilLateralComponent } from './perfil-lateral/perfil-lateral.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
