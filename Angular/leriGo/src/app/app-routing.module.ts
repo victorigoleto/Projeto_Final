@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { DoacaoComponent } from './doacao/doacao.component';
+import { GetNomeComponent } from './get-nome/get-nome.component';
+import { GetTipoComponent } from './get-tipo/get-tipo.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path: 'minhaConta',component: MinhaContaComponent},
   {path: 'perfilLateral',component: PerfilLateralComponent},
   {path: 'doacao',component: DoacaoComponent},
-  {path: 'carrinho',component: CarrinhoComponent}
+  {path: 'carrinho',component: CarrinhoComponent},
+  {path: 'get-nome/:nome', component: GetNomeComponent},
+  {path: 'get-tipo', component: GetTipoComponent}
 ];
 
 @NgModule({
