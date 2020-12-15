@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PerfilLateralComponent } from './perfil-lateral/perfil-lateral.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
+import { DoacaoComponent } from './doacao/doacao.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MinhaContaComponent } from './minha-conta/minha-conta.component';
     LoginComponent,
     CadastroComponent,
     PerfilLateralComponent,
-    MinhaContaComponent
+    MinhaContaComponent,
+    DoacaoComponent
   ],
   imports: [
     BrowserModule,
