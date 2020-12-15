@@ -1,4 +1,3 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/categoria';
@@ -8,11 +7,11 @@ import { MidiaService } from '../service/midia.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
-  selector: 'app-minha-conta',
-  templateUrl: './minha-conta.component.html',
-  styleUrls: ['./minha-conta.component.css']
+  selector: 'app-get-nome',
+  templateUrl: './get-nome.component.html',
+  styleUrls: ['./get-nome.component.css']
 })
-export class MinhaContaComponent implements OnInit {
+export class GetNomeComponent implements OnInit {
 
   idProd!: number
   idCate!: number
@@ -20,7 +19,10 @@ export class MinhaContaComponent implements OnInit {
   listaProduto!: Produto[]
   categoria: Categoria = new Categoria()
   listaCategoria!: Categoria[]
-
+  nome!: string
+  tipoCategoria!: string
+  nomeProduto!: string
+  
 
   carrinho: Produto = new Produto()
   listaCarrinho!: Produto[]
@@ -41,8 +43,10 @@ export class MinhaContaComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
 
-    this.findAllCategorias()
-    this.findAllProdutos()
+    let nome : string = this.route.snapshot.params['nomeProduto']
+
+
+    this.findByNomeProdutos(nome)
   }
 
   
@@ -79,7 +83,6 @@ export class MinhaContaComponent implements OnInit {
             this.produto = resp
             this.produto = new Produto()
             alert('Produto anunciado com sucesso!')
-            window.location.reload()
             this.findAllProdutos()
           })
         })
@@ -88,7 +91,6 @@ export class MinhaContaComponent implements OnInit {
           this.produto = resp
           this.produto = new Produto()
           alert('Produto anunciado com sucesso!')
-          window.location.reload()
           this.findAllProdutos()
         })
       }
@@ -99,7 +101,6 @@ export class MinhaContaComponent implements OnInit {
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       this.router.navigate(['/minhaConta'])
       alert('Produto excluido com sucesso!')
-      window.location.reload()
     })
   }
 
@@ -116,7 +117,6 @@ export class MinhaContaComponent implements OnInit {
     this.produto = resp
     this.router.navigate(['/minhaConta'])
     alert('Postagem alterada com sucesso')
-    window.location.reload()
     }, err =>{
       if(err.status == '500'){
         alert('Preencha todos os campos corretamente antes de enviar')
@@ -129,6 +129,16 @@ carregarImagemPreview(event: any) {
   this.foto = event.target.files[0]
   let url = URL.createObjectURL(this.foto);
   (<HTMLImageElement>document.querySelector('img#imagem-preview'))!.src = url
+}
+
+findByNomeProdutos(nome: string) {
+  if (nome === "" || nome == undefined){
+    this.findAllProdutos()
+  } else{
+    this.produtoService.getByNomeProduto(nome).subscribe((resp: Produto[]) => {
+      this.listaProduto = resp
+    })
+  }
 }
 
 }
