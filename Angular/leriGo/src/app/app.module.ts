@@ -15,6 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PerfilLateralComponent } from './perfil-lateral/perfil-lateral.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
+import { DoacaoComponent } from './doacao/doacao.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -27,14 +31,17 @@ import { MinhaContaComponent } from './minha-conta/minha-conta.component';
     LoginComponent,
     CadastroComponent,
     PerfilLateralComponent,
-    MinhaContaComponent
+    MinhaContaComponent,
+    DoacaoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CarouselModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
