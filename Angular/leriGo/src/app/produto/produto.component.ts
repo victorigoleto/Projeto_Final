@@ -6,43 +6,42 @@ import { Produto } from '../model/produto';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
-
 @Component({
-  selector: 'app-carrinho',
-  templateUrl: './carrinho.component.html',
-  styleUrls: ['./carrinho.component.css']
+  selector: 'app-produto',
+  templateUrl: './produto.component.html',
+  styleUrls: ['./produto.component.css']
 })
-export class CarrinhoComponent implements OnInit {
+export class ProdutoComponent implements OnInit {
 
-  idProdutos!: number[]
+  idProd!: number
+  idCate!: number
   produto: Produto = new Produto()
   listaProduto!: Produto[]
-  listaProd!: []
   categoria: Categoria = new Categoria()
   listaCategoria!: Categoria[]
-  
-  total: number = 100
-  
+  valorAntigo!: number
+
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private router: Router,
     private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(){
+    let id = this.route.snapshot.params['idProduto']
     
-  ) { }
 
-  ngOnInit() {
-    let idProd = this.route.snapshot.params["idProduto"]
-
-    this.identificarId(idProd)
+    this.identificarId(id)
   }
 
   identificarId(id: number){
+    this.idProd = id
     this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
       this.produto = resp
-    })
-    this.listaProduto.push({...this.produto})
+      this.valorAntigo = this.produto.preco + 10
+      
+      })
   }
-
   
 }

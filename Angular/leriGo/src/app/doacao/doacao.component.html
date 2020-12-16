@@ -7,11 +7,11 @@
         <div class="col-md-8">
             <h3 class="d-flex justify-content-center"> O ato de doar</h3>
             
-            <p class="p-3 fonte">
+            <p class="p-3 font">
                 Oi, galera! Vocês já ouviram falar que gentileza gera gentileza, não é? Se você doar roupas, a ideia é mais ou menos a mesma: a ação faz bem para quem dá e para quem recebe, na mesma proporção. Além de ajudar quem está necessitando, esse hábito também é bom para o meio ambiente e traz até alguns benefícios para você que está doando.
             </p>
             <hr>
-            <p class="p-3 fonte">
+            <p class="p-3 font">
                 Devemos entender a doação como algo periódico, realizado pelo menos uma vez ao ano. Na verdade, o ideal é seguir as estações e doar roupas de frio antes do outono e inverno, e as de calor, antes da primavera. Assim, quem recebe poderá aproveitar as roupas ainda no mesmo ano.     
             </p>
 
@@ -105,40 +105,66 @@
 <!-- FIM ONGS TESTE-->
 <!-- Momento doação-->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 d-flex justify-content-center mt-4 mb-4">
-            <h3>Escolha o produto que deseja doar</h3>
-            
-        </div>
-        <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let item of listaProduto">
-
-
-            <div class="card d-flex justify-content-center" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{item.nome}}</h5>
+<div class="container fundo d-flex justify-content-center w-100 border border-dark rounded mb-5 mt-5"
+            data-aos="fade-up">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 d-flex justify-content-center mt-4 mb-4">
+                    <h1>Doar peça</h1>
                 </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-4 mb-5 d-flex justify-content-center"
+                        *ngFor="let item of listaProduto | paginate: { itemsPerPage: 6, currentPage: paginaAtual }; let i = index">
+                        <div class="box" style="width: 14rem;">
+                            <div class="box-body">
+                                <h5 class="card-title text-center"></h5>
+                            </div>
+                            <div class="slide-img">
+                                <img alt="1" src={{item.foto}} style="max-width: 100%; max-height: 100%;">
+                                <!--overlayer---------->
+                                <div class="overlay">
+                                    <!--buy-btn------>
+                                    <a [routerLink]="['/produto', item.idProduto]" class="buy-btn">Ver +</a>
+                                </div>
+                            </div>
+                            <!--detail-box--------->
+                            <div class="detail-box">
+                                <!--type-------->
+                                <div class="type">
+                                    <a href="#">{{item.nome}}</a>
+                                    <span>Quantidade:{{item.quantidade}}</span>
+                                </div>
+                                <!--price-------->
 
-                <img src={{item.foto}}
-                    class="card-img-bottom" alt="...">
+                                <a href="#" class="price">R${{item.preco}}</a>
 
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item border border-dark">Tamanho - {{item.tamanho}}</li>
-                    <li class="list-group-item border border-dark">Valor - {{item.preco}}</li>
-                    <li class="list-group-item border border-dark">Id - {{item.idProduto}}</li>
-                </ul>
-                <div class="card-body">
+                               
 
-                    <button type="button" class="btn btn-outline-info w-100 mt-2" data-toggle="modal"
-                        data-target="#modalDelete" data-whatever="@mdo"
-                        (click)="identificarId(item.idProduto)">Doar peça</button>
+
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-12 card-body">
+
+                                        <button type="button" class="btn btn-outline-info w-100 mt-2" data-toggle="modal"
+                                            data-target="#modalDelete" data-whatever="@mdo"
+                                            (click)="identificarId(item.idProduto)">Doar peça</button>
+                                    </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-end align-items-end mb-5 mt-2">
+                        <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+                            nextLabel="Próximo">
+                        </pagination-controls>
+    
+                    </div>
                 </div>
-
+                
             </div>
-        </div>
 
-    </div>
-</div>
+        </div>
+                
+
 <!--Fim momento doação-->
 <!--Modal ONGs -->
 

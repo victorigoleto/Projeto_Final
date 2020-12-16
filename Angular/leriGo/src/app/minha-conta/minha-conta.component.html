@@ -16,24 +16,24 @@
                 <div class="col-md-12 mb-4">
                     <form>
                         <div class="form-group ">
-                            <label for="exampleFormControlInput1">Nome do Produto:</label>
+                            <label class="pl-1" for="exampleFormControlInput1">Nome do Produto:</label>
                             <input type="text" class="form-control" id="nomeProduto" placeholder="Ex: Blusa de frio"
                                 [(ngModel)]="produto.nome" [ngModelOptions]="{standalone: true}">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Quantidade:</label>
+                            <label class="pl-1" for="exampleFormControlInput1">Quantidade:</label>
                             <input type="number" class="form-control" id="nomeProduto" placeholder="Ex: 1"
                                 [(ngModel)]="produto.quantidade" [ngModelOptions]="{standalone: true}">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Valor (R$):</label>
-                            <input type="number" class="form-control" id="nomeProduto" placeholder="Ex: 100,00" default="0"
-                                [(ngModel)]="produto.preco" [ngModelOptions]="{standalone: true}">
+                            <label class="pl-1" for="exampleFormControlInput1">Valor (R$):</label>
+                            <input type="number" class="form-control" id="nomeProduto" placeholder="Ex: 100,00"
+                                default="0" [(ngModel)]="produto.preco" [ngModelOptions]="{standalone: true}">
                         </div>
                         <div class="col-md-12 d-flex justify-content-start mb-2 p-0">
-                            <div class="form-check form-check-inline">
+                            <div class="form-check form-check-inline pl-1">
                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                 <label class="form-check-label" for="inlineCheckbox1">Doação</label>
                             </div>
@@ -42,24 +42,26 @@
                         <div class="form-group mb-2">
                             <div class="row col-md-12">
                                 <div class="col-md-6 row">
-                                    <label for="exampleFormControlInput1">Foto do Produto:</label>
+                                    <label class="pl-1" for="exampleFormControlInput1">Foto do Produto:</label>
                                 </div>
                             </div>
-                            
+
                             <div class="input-group d-flex justify-content-center">
                                 <div class="d-flex justify-content-center mt-3 w-50 ">
-                                
-                                <label for="nomeProduto1" class="control-label d-flex justify-content-center"><img src="https://image.freepik.com/vetores-gratis/multicolor-roupas-peg-fundo-padrao_1224-157.jpg"
-                                    width="300px" height="300px" id="imagem-preview"></label>
-                                <input type="file" class="form-control mt-3 w-50 " id="nomeProduto1" name="nomeProduto1" [(ngModel)]="produto.foto"
-                                [ngModelOptions]="{standalone: true}" (change)='carregarImagemPreview($event)'>
-                            </div>
+
+                                    <label for="nomeProduto1" class="control-label d-flex justify-content-center"><img
+                                            src="https://image.freepik.com/vetores-gratis/multicolor-roupas-peg-fundo-padrao_1224-157.jpg"
+                                            width="300px" height="300px" id="imagem-preview"></label>
+                                    <input type="file" class="form-control mt-3 w-50 " id="nomeProduto1"
+                                        name="nomeProduto1" [(ngModel)]="produto.foto"
+                                        [ngModelOptions]="{standalone: true}" (change)='carregarImagemPreview($event)'>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row col-md-12 pl-0">
                             <div class="form-group col-md-6 pr-3">
-                                <label for="exampleFormControlSelect1">Tamanho:</label>
+                                <label class="pl-1" for="exampleFormControlSelect1">Tamanho:</label>
                                 <select class="form-control" id="exampleFormControlSelect1"
                                     [(ngModel)]="produto.tamanho" [ngModelOptions]="{standalone: true}">
                                     <option>P</option>
@@ -69,7 +71,7 @@
                             </div>
 
                             <div class="form-group col-md-6 pr-4">
-                                <label for="exampleFormControlSelect1">Categoria:</label>
+                                <label class="pl-1" for="exampleFormControlSelect1">Categoria:</label>
                                 <select class="form-control" id="exampleFormControlSelect1"
                                     [(ngModel)]="categoria.idCategoria" [ngModelOptions]="{standalone: true}">
                                     <option>Vestuário</option>
@@ -114,39 +116,64 @@
 
         <div class="col-md-12 fundo d-flex justify-content-center w-100 border border-dark rounded mt-5"
             data-aos="fade-up">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-12 d-flex justify-content-center mt-4 mb-4">
                     <h1>Meus Anúncios</h1>
                 </div>
-                <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let item of listaProduto">
+                <div class="row">
+                    <div class="col-md-4 mb-5 d-flex justify-content-center"
+                        *ngFor="let item of listaProduto | paginate: { itemsPerPage: 6, currentPage: paginaAtual }; let i = index">
+                        <div class="box" style="width: 14rem;">
+                            <div class="box-body">
+                                <h5 class="card-title text-center"></h5>
+                            </div>
+                            <div class="slide-img">
+                                <img alt="1" src={{item.foto}} style="max-width: 100%; max-height: 100%;">
+                                <!--overlayer---------->
+                                <div class="overlay">
+                                    <!--buy-btn------>
+                                    <a [routerLink]="['/produto', item.idProduto]" class="buy-btn">Ver +</a>
+                                </div>
+                            </div>
+                            <!--detail-box--------->
+                            <div class="detail-box">
+                                <!--type-------->
+                                <div class="type">
+                                    <a href="#">{{item.nome}}</a>
+                                    <span>Quantidade:{{item.quantidade}}</span>
+                                </div>
+                                <!--price-------->
+
+                                <a href="#" class="price">R${{item.preco}}</a>
+
+                               
 
 
-                    <div class="card d-flex justify-content-center" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{item.nome}}</h5>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-12 card-body">
+
+                                    <button type="button" class="btn btn-outline-info w-100 mt-2"
+                                        data-toggle="modal" data-target="#modalAlterar" data-whatever="@mdo"
+                                        (click)="identificarId(item.idProduto)">Alterar Anúncio</button>
+
+                                    <button type="button" class="btn btn-outline-danger w-100 mt-2"
+                                        data-toggle="modal" data-target="#modalDelete" data-whatever="@mdo"
+                                        (click)="identificarId(item.idProduto)">Deletar Anúncio</button>
+
+                                </div>
+                            </div>
                         </div>
-
-                        <img src={{item.foto}} class="card-img-top" alt="...">
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item border border-dark">Tamanho - {{item.tamanho}}</li>
-                            <li class="list-group-item border border-dark">Valor - {{item.preco}}</li>
-                            <li class="list-group-item border border-dark">Id - {{item.idProduto}}</li>
-                        </ul>
-                        <div class="card-body">
-
-                            <button type="button" class="btn btn-outline-info w-100 mt-2" data-toggle="modal"
-                                data-target="#modalAlterar" data-whatever="@mdo"
-                                (click)="identificarId(item.idProduto)">Alterar Anúncio</button>
-
-                            <button type="button" class="btn btn-outline-danger w-100 mt-2" data-toggle="modal"
-                                data-target="#modalDelete" data-whatever="@mdo"
-                                (click)="identificarId(item.idProduto)">Deletar Anúncio</button>
-
-                        </div>
+                        
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-end align-items-end mb-5 mt-2">
+                        <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+                            nextLabel="Próximo">
+                        </pagination-controls>
+    
                     </div>
                 </div>
-
+                
             </div>
 
         </div>

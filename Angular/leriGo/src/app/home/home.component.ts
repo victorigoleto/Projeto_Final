@@ -53,6 +53,8 @@ export class HomeComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaCategoria!: Categoria[]
 
+  numVezes: number = 0
+
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
@@ -63,6 +65,9 @@ export class HomeComponent implements OnInit {
 
 
   public ngOnInit(){
+
+    
+
     this.findAllCategorias()
     this.findAllProdutos()
   }
@@ -70,6 +75,7 @@ export class HomeComponent implements OnInit {
   findAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProduto = resp
+      
     })
   }
 
@@ -79,12 +85,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  identificarId(id: number){
-    this.idProd = id
-    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
-      this.produto = resp
-      })
-  }
+  
 
 
 

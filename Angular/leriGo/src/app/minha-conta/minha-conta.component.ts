@@ -14,6 +14,7 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class MinhaContaComponent implements OnInit {
 
+  public paginaAtual = 1;
   idProd!: number
   idCate!: number
   produto: Produto = new Produto()

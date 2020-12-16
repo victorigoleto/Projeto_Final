@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GetNomeComponent } from './get-nome/get-nome.component';
 import { GetTipoComponent } from './get-tipo/get-tipo.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProdutoComponent } from './produto/produto.component';
 
 
 
@@ -37,7 +38,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MinhaContaComponent,
     DoacaoComponent,
     GetNomeComponent,
-    GetTipoComponent
+    GetTipoComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,

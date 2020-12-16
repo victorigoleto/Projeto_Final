@@ -1,52 +1,27 @@
 <div class="container  mt-5 mb-5">
     <div class="row mb-5">
 
-        <div class="col-md-6 border">
-            <h2 class="text-center">Carrinho</h2>
-            <div class="row mb-5">
+        <div class="col-md-6 border fundo-pagamento">
+            <h2 class="text-center  mt-4 mb-4">Carrinho</h2>
+            <div class="row mb-5" *ngFor="let item of listaProduto">
                 <div class="col-md-4 pl-5 ">
-                    <img class="border mb-4 w-100 h-100" src="assets/img/camiseta.jpg" alt="">
+                    <img class="border mb-4 w-100 h-100" src={{item.foto}} alt="">
                 </div>
                 <div class="col-md-4 pl-0">
-                    <h4>Nome produto</h4>
-                    <p>Tamanho: G</p>
+                    <h4>{{item.nome}}</h4>
+                    <p>Tamanho: {{item.tamanho}}</p>
                 </div>
                 <div class="col-md-4 pl-0 d-flex justify-content-end align-self-end">
-                    <p>Valor: R$500</p>
+                    <p>Valor: R${{item.preco}}</p>
                 </div>
             </div>
 
-            <div class="row mb-5">
-                <div class="col-md-4 pl-5 ">
-                    <img class="border mb-4 w-100 h-100" src="assets/img/bota.jpg" alt="">
-                </div>
-                <div class="col-md-4 pl-0">
-                    <h4>Nome produto</h4>
-                    <p>Tamanho: G</p>
-                </div>
-                <div class="col-md-4 pl-0 d-flex justify-content-end align-self-end">
-                    <p>Valor: R$500</p>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-md-4 pl-5 ">
-                    <img class="border mb-4 w-100 h-100" src="assets/img/relogio.jpg" alt="">
-                </div>
-                <div class="col-md-4 pl-0">
-                    <h4>Nome produto</h4>
-                    <p>Tamanho: G</p>
-                </div>
-                <div class="col-md-4 pl-0 d-flex justify-content-end align-self-end">
-                    <p>Valor: R$500</p>
-                </div>
-            </div>
         </div>
 
 
 
-        <div class="col-md-6 border">
-            <h2 class="text-center">Pagamento</h2>
+        <div class="col-md-6 border fundo-carrinho">
+            <h2 class="text-center mt-4 mb-4">Pagamento</h2>
 
             <form>
                 <div class="form-group">
@@ -77,7 +52,7 @@
                         <option>3X</option>
                     </select>
                 </div>
-                <div class="d-flex justify-content-end ">
+                <div class="d-flex justify-content-end align-self-end">
                     <h4>Total da compra: {{total}}</h4>
                 </div>
         <div class="d-flex justify-content-center">

@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import { PerfilLateralComponent } from './perfil-lateral/perfil-lateral.component';
+import { ProdutoComponent } from './produto/produto.component';
 import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
@@ -26,8 +27,9 @@ const routes: Routes = [
   {path: 'carrinho',component: CarrinhoComponent},
   {path: 'get-nome/:nome', component: GetNomeComponent},
   {path: 'get-tipo', component: GetTipoComponent},
-  {path: 'carrinho',component: CarrinhoComponent},
+  {path: 'carrinho/:idProduto',component: CarrinhoComponent},
   {path: 'doacao',component: DoacaoComponent},
+  {path: 'produto/:idProduto',component: ProdutoComponent}
 
 ];
 
