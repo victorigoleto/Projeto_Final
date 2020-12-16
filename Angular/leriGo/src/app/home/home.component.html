@@ -6,18 +6,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img
-        src="assets/img/banner1.png"
-        class="d-block w-100" alt="...">
+      <img src="assets/img/banner1.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img
-        src="assets/img/banner2.png"
-        class="d-block w-100" alt="...">
+      <img src="assets/img/banner2.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/img/banner3.png" 
-      class="d-block w-100" alt="...">
+      <img src="assets/img/banner3.png" class="d-block w-100" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -34,143 +29,219 @@
 
 
 <div class="container mt-5">
-<div class="row">
 
+  <div class="container d-flex justify-content-center my-5">
 
-
-<div class="col-md-12">
-<owl-carousel-o [options]="customOptions" >
-  <ng-template carouselSlide>
-    <div class="col-md-4">
-      <div class="box" style="width: 11rem;">
-        <div class="box-body">
-            <h5 class="card-title text-center">Produto</h5>
-        </div>
-        <div class="slide-img">
-          <img alt="1" src="assets/img/1.jpg" class="efeito">
-          <!--overlayer---------->
-          <div class="overlay">
-          <!--buy-btn------>	
-          <a href="#" class="buy-btn">Compre Agora</a>	
-          </div>
-          </div>
-          <!--detail-box--------->
-  <div class="detail-box">
-    <!--type-------->
-    <div class="type">
-    <a href="#">Teste</a>
-    <span>Testoso</span>
-    </div>
-    <!--price-------->
-    <a href="#" class="price">$23</a>
-      
-    </div>
+    <div class="card w-100 text-center">
+      <img src="./assets/img/bannerVestuario.jpg" class="rounded shadow">
+      <div class="info">
+        <h1>Vestuario</h1>
+        <p> <a href="#" class="btnCerta"> Filtrar</a></p>
       </div>
     </div>
-  </ng-template>  
-  <ng-template carouselSlide>
-    <div class="col-md-4">
-      <div class="box" style="width: 11rem;">
-        <div class="box-body">
-            <h5 class="card-title">Produto</h5>
-        </div>
-        <div class="slide-img">
-          <img alt="1" src="assets/img/2.jpg">
-          <!--overlayer---------->
-          <div class="overlay">
-          <!--buy-btn------>	
-          <a href="#" class="buy-btn">Compre Agora</a>	
-          </div>
-          </div>
-          <!--detail-box--------->
-  <div class="detail-box">
-    <!--type-------->
-    <div class="type">
-    <a href="#">Teste</a>
-    <span>Testoso</span>
-    </div>
-    <!--price-------->
-    <a href="#" class="price">$23</a>
-      
-    </div>
+
+
+    <div class="card w-100 text-center">
+      <img src="./assets/img/bannerCalcados.jpg" class="rounded shadow">
+      <div class="info">
+        <h1>Calçados</h1>
+        <p> <a href="#" class="btnCerta"> Filtrar</a></p>
       </div>
     </div>
-  </ng-template>  
-  <ng-template carouselSlide>
-    <div class="col-md-4">
-      <div class="box" style="width: 11rem;">
-        <div class="box-body">
-            <h5 class="card-title">Produto</h5>
-        </div>
-        <div class="slide-img">
-          <img alt="1" src="assets/img/3.jpg">
-          <!--overlayer---------->
-          <div class="overlay">
-          <!--buy-btn------>	
-          <a href="#" class="buy-btn">Compre Agora</a>	
-          </div>
-          </div>
-          <!--detail-box--------->
-  <div class="detail-box">
-    <!--type-------->
-    <div class="type">
-    <a href="#">Teste</a>
-    <span>Testoso</span>
-    </div>
-    <!--price-------->
-    <a href="#" class="price">$23</a>
-      
-    </div>
+
+    <div class="card w-100 text-center">
+      <img src="./assets/img/bannerAcessorios.jpg" class="rounded shadow">
+      <div class="info">
+        <h1>Acessórios</h1>
+        <p> <a href="#" class="btnCerta"> Filtrar</a></p>
       </div>
     </div>
-  </ng-template> 
-  <ng-template carouselSlide>
-    <div class="col-md-4">
-      <div class="box" style="width: 11rem;">
-        <div class="box-body">
-            <h5 class="card-title">Produto</h5>
-        </div>
-        <div class="slide-img">
-          <img alt="1" src="assets/img/4.jpg">
-          <!--overlayer---------->
-          <div class="overlay">
-          <!--buy-btn------>	
-          <a href="#" class="buy-btn">Compre Agora</a>	
-          </div>
-          </div>
-          <!--detail-box--------->
-  <div class="detail-box">
-    <!--type-------->
-    <div class="type">
-    <a href="#">Teste</a>
-    <span>Testoso</span>
-    </div>
-    <!--price-------->
-    <a href="#" class="price">$23</a>
-      
-    </div>
-      </div>
-    </div>
-  </ng-template>  
-   
-</owl-carousel-o>
-</div>
-</div>
 
-<div class="container d-flex justify-content-center my-5">
-  <div class="row">
-    <div class="col">
-      <img src="./assets/img/bannerVestuario.jpg" class="rounded shadow efeito" width="100%">
-    </div>
 
-    <div class="col">
-      <img src="./assets/img/bannerCalcados.jpg" class="rounded shadow efeito" width="100%">
-    </div>
 
-    <div class="col">
-      <img src="./assets/img/bannerAcessorios.jpg" class="rounded shadow efeito" width="100%">
-    </div>
 
   </div>
 
+  <div class="container">
+    <div class="box" style="width: 10rem;">
+      <div class="box-body">
+        <h5 class="card-title text-center"></h5>
+      </div>
+      <div class="slide-img">
+        <img alt="1" src="assets/img/1.jpg" class="efeito">
+        <!--overlayer---------->
+        <div class="overlay">
+          <!--buy-btn------>
+          <a href="#" class="buy-btn">Compre Agora</a>
+        </div>
+      </div>
+      <!--detail-box--------->
+      <div class="detail-box">
+        <!--type-------->
+        <div class="type">
+          <a href="#">Teste</a>
+          <span>Testoso</span>
+        </div>
+        <!--price-------->
+        <a href="#" class="price">R$23</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+
+    <div class="container justify-content-center">Produtos adicionados recentes </div>
+    <div class="col-md-12  mt-5 my-5">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <div class="col-md-4">
+            <div class="box" style="width: 12.5rem;">
+              <div class="box-body">
+                <h5 class="card-title text-center"></h5>
+              </div>
+              <div class="slide-img">
+                <img alt="1" src="assets/img/1.jpg" class="efeito">
+                <!--overlayer---------->
+                <div class="overlay">
+                  <!--buy-btn------>
+                  <a href="#" class="buy-btn">Compre Agora</a>
+                </div>
+              </div>
+              <!--detail-box--------->
+              <div class="detail-box">
+                <!--type-------->
+                <div class="type">
+                  <a href="#">Teste</a>
+                  <span>Testoso</span>
+                </div>
+                <!--price-------->
+                <a href="#" class="price">R$23</a>
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="col-md-4">
+            <div class="box" style="width: 12.5rem;">
+              <div class="box-body">
+                <h5 class="card-title"></h5>
+              </div>
+              <div class="slide-img">
+                <img alt="1" src="assets/img/2.jpg">
+                <!--overlayer---------->
+                <div class="overlay">
+                  <!--buy-btn------>
+                  <a href="#" class="buy-btn">Compre Agora</a>
+                </div>
+              </div>
+              <!--detail-box--------->
+              <div class="detail-box">
+                <!--type-------->
+                <div class="type">
+                  <a href="#">Teste</a>
+                  <span>Testoso</span>
+                </div>
+                <!--price-------->
+                <a href="#" class="price">R$23</a>
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="col-md-4">
+            <div class="box" style="width: 12.5rem;">
+              <div class="box-body">
+                <h5 class="card-title"></h5>
+              </div>
+              <div class="slide-img">
+                <img alt="1" src="assets/img/3.jpg">
+                <!--overlayer---------->
+                <div class="overlay">
+                  <!--buy-btn------>
+                  <a href="#" class="buy-btn">Compre Agora</a>
+                </div>
+              </div>
+              <!--detail-box--------->
+              <div class="detail-box">
+                <!--type-------->
+                <div class="type">
+                  <a href="#">Teste</a>
+                  <span>Testoso</span>
+                </div>
+                <!--price-------->
+                <a href="#" class="price">R$23</a>
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="col-md-4">
+            <div class="box" style="width: 12.5rem;">
+              <div class="box-body">
+                <h5 class="card-title"></h5>
+              </div>
+              <div class="slide-img">
+                <img alt="1" src="assets/img/4.jpg">
+                <!--overlayer---------->
+                <div class="overlay">
+                  <!--buy-btn------>
+                  <a href="#" class="buy-btn">Compre Agora</a>
+                </div>
+              </div>
+              <!--detail-box--------->
+              <div class="detail-box">
+                <!--type-------->
+                <div class="type">
+                  <a href="#">Teste</a>
+                  <span>Testoso</span>
+                </div>
+                <!--price-------->
+                <a href="#" class="price">R$23</a>
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+      </owl-carousel-o>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center fonte">
+      <h1 class="fonte">Produtos</h1>
+    </div>
+    <div class="col-md-3 mb-5 " *ngFor="let item of listaProduto">
+      <div class="box" style="width: 14rem;">
+        <div class="box-body">
+          <h5 class="card-title text-center"></h5>
+        </div>
+        <div class="slide-img">
+          <img alt="1" src={{item.foto}} style="max-width: 100%; max-height: 100%;">
+          <!--overlayer---------->
+          <div class="overlay">
+            <!--buy-btn------>
+            <a href="#" class="buy-btn">Ver +</a>
+          </div>
+        </div>
+        <!--detail-box--------->
+        <div class="detail-box">
+          <!--type-------->
+          <div class="type">
+            <a href="#">{{item.nome}}</a>
+            <span>{{item.quantidade}}</span>
+          </div>
+          <!--price-------->
+          
+          <a href="#" class="price">R${{item.preco}}</a>
+  
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
