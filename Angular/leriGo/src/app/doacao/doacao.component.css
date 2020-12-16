@@ -14,3 +14,8 @@
     -o-transform:scale(1.15); /* Opera */
      transform:scale(1.15);
 }
+
+.fonte{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
