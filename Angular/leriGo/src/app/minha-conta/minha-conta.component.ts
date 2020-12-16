@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { MidiaService } from '../service/midia.service';
 import { ProdutoService } from '../service/produto.service';
@@ -33,7 +34,8 @@ export class MinhaContaComponent implements OnInit {
     private categoriaService: CategoriaService,
     private router: Router,
     private route: ActivatedRoute,
-    private midiaService: MidiaService
+    private midiaService: MidiaService,
+    private alert: AlertasService
   ) { }
 
   
@@ -71,7 +73,7 @@ export class MinhaContaComponent implements OnInit {
     this.categoria.idCategoria = this.idCate
 
     if (this.produto.nome == null || this.produto.quantidade < 1 || this.produto.preco == null || this.produto.foto == null) {
-      alert('Preencha todos os campos antes de publicar')
+      this.alert.showAlertDanger('Preencha todos os campos antes de publicar')
     } else {
       if (this.foto != null) {
         this.midiaService.uploadPhoto(this.foto).subscribe((resp: any) => {
@@ -79,7 +81,7 @@ export class MinhaContaComponent implements OnInit {
           this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
             this.produto = resp
             this.produto = new Produto()
-            alert('Produto anunciado com sucesso!')
+            this.alert.showAlertSuccess('Produto anunciado com sucesso!')
             window.location.reload()
             this.findAllProdutos()
           })
@@ -88,7 +90,7 @@ export class MinhaContaComponent implements OnInit {
         this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=> {
           this.produto = resp
           this.produto = new Produto()
-          alert('Produto anunciado com sucesso!')
+          this.alert.showAlertSuccess('Produto anunciado com sucesso!')
           window.location.reload()
           this.findAllProdutos()
         })
@@ -99,7 +101,7 @@ export class MinhaContaComponent implements OnInit {
   btnDelete(){
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       this.router.navigate(['/minhaConta'])
-      alert('Produto excluido com sucesso!')
+      this.alert.showAlertDanger('Produto excluido com sucesso!')
       window.location.reload()
     })
   }
@@ -116,11 +118,11 @@ export class MinhaContaComponent implements OnInit {
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto = resp
     this.router.navigate(['/minhaConta'])
-    alert('Postagem alterada com sucesso')
+    this.alert.showAlertInfo('Postagem alterada com sucesso')
     window.location.reload()
     }, err =>{
       if(err.status == '500'){
-        alert('Preencha todos os campos corretamente antes de enviar')
+        this.alert.showAlertDanger('Preencha todos os campos corretamente antes de enviar')
       }
     })
   }

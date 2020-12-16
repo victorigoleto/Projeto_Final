@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { MidiaService } from '../service/midia.service';
 import { ProdutoService } from '../service/produto.service';
@@ -28,7 +29,8 @@ export class GetTipoComponent implements OnInit {
     private categoriaService: CategoriaService,
     private router: Router,
     private route: ActivatedRoute,
-    private midiaService: MidiaService
+    private midiaService: MidiaService,
+    private alert: AlertasService
   ) { }
 
   ngOnInit(): void {

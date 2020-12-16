@@ -22,6 +22,8 @@ import { GetNomeComponent } from './get-nome/get-nome.component';
 import { GetTipoComponent } from './get-tipo/get-tipo.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProdutoComponent } from './produto/produto.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 
 
@@ -39,7 +41,8 @@ import { ProdutoComponent } from './produto/produto.component';
     DoacaoComponent,
     GetNomeComponent,
     GetTipoComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { ProdutoComponent } from './produto/produto.component';
     CarouselModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

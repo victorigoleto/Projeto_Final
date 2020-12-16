@@ -50,7 +50,7 @@
                                 <div class="d-flex justify-content-center mt-3 w-50 ">
 
                                     <label for="nomeProduto1" class="control-label d-flex justify-content-center"><img
-                                            src="https://image.freepik.com/vetores-gratis/multicolor-roupas-peg-fundo-padrao_1224-157.jpg"
+                                            src="./assets/img/TouchHere.png"
                                             width="300px" height="300px" id="imagem-preview"></label>
                                     <input type="file" class="form-control mt-3 w-50 " id="nomeProduto1"
                                         name="nomeProduto1" [(ngModel)]="produto.foto"
@@ -62,12 +62,9 @@
                         <div class="row col-md-12 pl-0">
                             <div class="form-group col-md-6 pr-3">
                                 <label class="pl-1" for="exampleFormControlSelect1">Tamanho:</label>
-                                <select class="form-control" id="exampleFormControlSelect1"
-                                    [(ngModel)]="produto.tamanho" [ngModelOptions]="{standalone: true}">
-                                    <option>P</option>
-                                    <option>M</option>
-                                    <option>G</option>
-                                </select>
+                                <input type="text" class="form-control" id="exampleFormControlSelect1" row="3" 
+                                placeholder="Ex: Tamanho:P ou Tamanho de Tenis: 38"    [(ngModel)]="produto.tamanho" [ngModelOptions]="{standalone: true}">
+                                    
                             </div>
 
                             <div class="form-group col-md-6 pr-4">
