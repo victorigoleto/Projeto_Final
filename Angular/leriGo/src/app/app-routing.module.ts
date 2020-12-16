@@ -25,12 +25,9 @@ const routes: Routes = [
 
   {path: 'carrinho',component: CarrinhoComponent},
   {path: 'get-nome/:nome', component: GetNomeComponent},
-  {path: 'get-tipo', component: GetTipoComponent}
-=======
-  {path: 'carrinho',component: CarrinhoComponent}
-=======
-  {path: 'doacao',component: DoacaoComponent}
-
+  {path: 'get-tipo', component: GetTipoComponent},
+  {path: 'carrinho',component: CarrinhoComponent},
+  {path: 'doacao',component: DoacaoComponent},
 
 ];
 

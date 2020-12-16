@@ -20,6 +20,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GetNomeComponent } from './get-nome/get-nome.component';
 import { GetTipoComponent } from './get-tipo/get-tipo.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -40,12 +41,13 @@ import { GetTipoComponent } from './get-tipo/get-tipo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
     CarouselModule,
     BrowserAnimationsModule,
+    NgxPaginationModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -42,9 +42,10 @@ export class HomeComponent implements OnInit {
         items: 4
       }
     },
-    nav: true
+    nav: true,
   }
   
+  public paginaAtual = 1;
   idProd!: number
   idCate!: number
   produto: Produto = new Produto()
