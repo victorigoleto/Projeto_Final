@@ -18,6 +18,9 @@ import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import { DoacaoComponent } from './doacao/doacao.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GetNomeComponent } from './get-nome/get-nome.component';
+import { GetTipoComponent } from './get-tipo/get-tipo.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 
 
@@ -32,7 +35,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CadastroComponent,
     PerfilLateralComponent,
     MinhaContaComponent,
-    DoacaoComponent
+    DoacaoComponent,
+    GetNomeComponent,
+    GetTipoComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,
