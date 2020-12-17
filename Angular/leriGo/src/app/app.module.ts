@@ -20,7 +20,14 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GetNomeComponent } from './get-nome/get-nome.component';
 import { GetTipoComponent } from './get-tipo/get-tipo.component';
+<<<<<<< HEAD
 import { ProdutoComponent } from './produto/produto.component';
+=======
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProdutoComponent } from './produto/produto.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal'
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
 
 
 
@@ -38,16 +45,23 @@ import { ProdutoComponent } from './produto/produto.component';
     DoacaoComponent,
     GetNomeComponent,
     GetTipoComponent,
+<<<<<<< HEAD
     ProdutoComponent
+=======
+    ProdutoComponent,
+    AlertasComponent
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
     CarouselModule,
     BrowserAnimationsModule,
+    NgxPaginationModule,
+    AppRoutingModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

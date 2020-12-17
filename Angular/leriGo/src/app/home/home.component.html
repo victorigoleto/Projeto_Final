@@ -216,7 +216,12 @@
     <div class="col-md-12 d-flex justify-content-center fonte">
       <h1 class="fonte">Produtos</h1>
     </div>
+<<<<<<< HEAD
     <div class="col-md-3 mb-5 " *ngFor="let item of listaProduto">
+=======
+    <div class="col-md-3 mb-5 "
+      *ngFor="let item of listaProduto | paginate: { itemsPerPage: 8, currentPage: paginaAtual }; let i = index">
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
       <div class="box" style="width: 14rem;">
         <div class="box-body">
           <h5 class="card-title text-center"></h5>
@@ -226,7 +231,11 @@
           <!--overlayer---------->
           <div class="overlay">
             <!--buy-btn------>
+<<<<<<< HEAD
             <a href="#" class="buy-btn">Ver +</a>
+=======
+            <a [routerLink]="['/produto', item.idProduto]" class="buy-btn">Ver +</a>
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
           </div>
         </div>
         <!--detail-box--------->
@@ -234,6 +243,7 @@
           <!--type-------->
           <div class="type">
             <a href="#">{{item.nome}}</a>
+<<<<<<< HEAD
             <span>{{item.quantidade}}</span>
           </div>
           <!--price-------->
@@ -243,5 +253,22 @@
         </div>
       </div>
     </div>
+=======
+            <span>Quantidade:{{item.quantidade}}</span>
+          </div>
+          <!--price-------->
+
+          <a href="#" class="price">R${{item.preco}}</a>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="col d-flex justify-content-end align-items-end mb-5 mt-2">
+    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+    </pagination-controls>
+
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
   </div>
 </div>

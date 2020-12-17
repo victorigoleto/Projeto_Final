@@ -42,9 +42,13 @@ export class HomeComponent implements OnInit {
         items: 4
       }
     },
-    nav: true
+    nav: true,
   }
   
+<<<<<<< HEAD
+=======
+  public paginaAtual = 1;
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
   idProd!: number
   idCate!: number
   produto: Produto = new Produto()
@@ -52,6 +56,11 @@ export class HomeComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaCategoria!: Categoria[]
 
+<<<<<<< HEAD
+=======
+  numVezes: number = 0
+
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
@@ -62,6 +71,7 @@ export class HomeComponent implements OnInit {
 
 
   public ngOnInit(){
+<<<<<<< HEAD
     this.findAllCategorias()
     this.findAllProdutos()
   }
@@ -85,6 +95,30 @@ export class HomeComponent implements OnInit {
       })
   }
 
+=======
+
+    
+
+    this.findAllCategorias()
+    this.findAllProdutos()
+  }
+
+  findAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
+      
+    })
+  }
+
+  findAllCategorias(){
+    this.categoriaService.getAllCategorias().subscribe((resp: Categoria[])=> {
+      this.listaCategoria = resp
+    })
+  }
+
+  
+
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
 
 
 

@@ -298,3 +298,39 @@ a {
     border-radius: 0 20px 20px 0;
   }
 }
+<<<<<<< HEAD
+=======
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer > a {
+  display: flex;
+  border: 0;
+  padding: 15px 25px;
+  align-items: center;
+  border-radius: 7px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #7db9e6 0%, #4389bf 100%);
+  box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.3);
+  transition: 200ms;
+}
+.footer > a:hover {
+  background: linear-gradient(to bottom, #7db9e6 0%, #255a81 100%);
+}
+.footer > a > img {
+  width: 31px;
+}
+.footer > a > button > span {
+  
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: 10px;
+  color: white;
+}
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5

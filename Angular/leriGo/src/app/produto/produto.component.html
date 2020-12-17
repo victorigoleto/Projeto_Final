@@ -1,10 +1,15 @@
 <div class="container">
     <div class="product-image">  
+<<<<<<< HEAD
       <img src="./assets/img/produto.png" alt="" class="product-pic">
+=======
+      <img src={{produto.foto}} alt="" class="product-pic">
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
     </div>
     
     <div class="product-details">
       <header>
+<<<<<<< HEAD
         <h1 class="title">Nome Produto</h1>
         <span class="colorCat">Categoria</span>
         <div class="price">
@@ -17,6 +22,20 @@
           <a href="" class="active">★</a>
           <a href="">★</a>
           <a href="">★</a>
+=======
+        <h1 class="title">{{produto.nome}}</h1>
+        <span class="colorCat">Estoque: {{produto.quantidade}}</span>
+        <div class="price">
+          <span class="before">De {{valorAntigo}}</span>
+          <span class="current">Por R$ {{produto.preco}}</span>
+        </div>
+        <div class="rate">
+          <a class="active">★</a>
+          <a class="active">★</a>
+          <a class="active">★</a>
+          <a class="active">★</a>
+          <a >★</a>
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
         </div>
       </header>
       <article>
@@ -41,6 +60,7 @@
         </div>
       </div>
       <div class="footer">
+<<<<<<< HEAD
         <button type="button">
           <span>Adicione ao carrinho</span>
         </button>
@@ -53,3 +73,24 @@
     
   </div>
   
+=======
+        <button type="button" [routerLink]="['/carrinho', produto.idProduto]">
+          <span>Adicione ao carrinho</span>
+        </button>
+        
+        <a href="https://mpago.la/31UqYCn" target="_blank">
+        <button style="
+        display: flex;
+        border: 0;
+        align-items: center;
+        cursor: pointer;
+        background: linear-gradient(to bottom, #7db9e6 0%, #4389bf 100%);
+        transition: 200ms;">
+          <span >Comprar agora</span>
+        </button>
+        </a>
+      </div>
+    </div>
+    
+  </div>
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5

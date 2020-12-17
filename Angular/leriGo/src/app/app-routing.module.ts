@@ -27,12 +27,18 @@ const routes: Routes = [
   {path: 'carrinho',component: CarrinhoComponent},
   {path: 'get-nome/:nome', component: GetNomeComponent},
   {path: 'get-tipo', component: GetTipoComponent},
+<<<<<<< HEAD
 
   {path: 'carrinho',component: CarrinhoComponent},
 
   {path: 'doacao',component: DoacaoComponent},
   {path: 'produto',component: ProdutoComponent}
 
+=======
+  {path: 'carrinho/:idProduto',component: CarrinhoComponent},
+  {path: 'doacao',component: DoacaoComponent},
+  {path: 'produto/:idProduto',component: ProdutoComponent}
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
 
 ];
 

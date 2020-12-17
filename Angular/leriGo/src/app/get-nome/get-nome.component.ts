@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
+<<<<<<< HEAD
+=======
+import { AlertasService } from '../service/alertas.service';
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
 import { CategoriaService } from '../service/categoria.service';
 import { MidiaService } from '../service/midia.service';
 import { ProdutoService } from '../service/produto.service';
@@ -34,7 +38,12 @@ export class GetNomeComponent implements OnInit {
     private categoriaService: CategoriaService,
     private router: Router,
     private route: ActivatedRoute,
+<<<<<<< HEAD
     private midiaService: MidiaService
+=======
+    private midiaService: MidiaService,
+    private alert: AlertasService
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
   ) { }
 
   
@@ -74,7 +83,11 @@ export class GetNomeComponent implements OnInit {
     this.categoria.idCategoria = this.idCate
 
     if (this.produto.nome == null || this.produto.quantidade < 1 || this.produto.preco == null || this.produto.foto == null) {
+<<<<<<< HEAD
       alert('Preencha todos os campos antes de publicar')
+=======
+      this.alert.showAlertDanger('Preencha todos os campos antes de publicar')
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
     } else {
       if (this.foto != null) {
         this.midiaService.uploadPhoto(this.foto).subscribe((resp: any) => {
@@ -82,7 +95,11 @@ export class GetNomeComponent implements OnInit {
           this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
             this.produto = resp
             this.produto = new Produto()
+<<<<<<< HEAD
             alert('Produto anunciado com sucesso!')
+=======
+            this.alert.showAlertSuccess('Produto anunciado com sucesso!')
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
             this.findAllProdutos()
           })
         })
@@ -90,7 +107,11 @@ export class GetNomeComponent implements OnInit {
         this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=> {
           this.produto = resp
           this.produto = new Produto()
+<<<<<<< HEAD
           alert('Produto anunciado com sucesso!')
+=======
+          this.alert.showAlertSuccess('Produto anunciado com sucesso!')
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
           this.findAllProdutos()
         })
       }
@@ -100,7 +121,11 @@ export class GetNomeComponent implements OnInit {
   btnDelete(){
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       this.router.navigate(['/minhaConta'])
+<<<<<<< HEAD
       alert('Produto excluido com sucesso!')
+=======
+      this.alert.showAlertDanger('Produto excluido com sucesso!')
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
     })
   }
 
@@ -116,10 +141,17 @@ export class GetNomeComponent implements OnInit {
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto = resp
     this.router.navigate(['/minhaConta'])
+<<<<<<< HEAD
     alert('Postagem alterada com sucesso')
     }, err =>{
       if(err.status == '500'){
         alert('Preencha todos os campos corretamente antes de enviar')
+=======
+    this.alert.showAlertSuccess('Postagem alterada com sucesso')
+    }, err =>{
+      if(err.status == '500'){
+        this.alert.showAlertDanger('Preencha todos os campos corretamente antes de enviar')
+>>>>>>> e2ecb157e1ad4e8bb3d38f8cd36e9c1b5b903ba5
       }
     })
   }
